@@ -3,6 +3,7 @@ package com.srm.cjava.wk01.day02;
 public class Point {
     private int x;
     private int y;
+
     public Point() {
 
     }
@@ -16,15 +17,15 @@ public class Point {
         return x;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
     public int getY() {
         return y;
     }
 
-    public int setXY(int x, int y){
-        return (x,y);
-    }
-
-    public int distance(Point p1, Point p2) {
-
+    public void setY(int y) {
+        this.y = y;
     }
 }
