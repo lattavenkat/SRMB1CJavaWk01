@@ -1,4 +1,4 @@
-package com.srm.cjava.wk01.Day04.currencypackage;
+package com.srm.cjava.wk01.day04.currencypackage;
 
 import java.util.Scanner;
 

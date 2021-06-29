@@ -1,4 +1,4 @@
-package com.srm.cjava.wk01.Day04.Package02.p1;
+package com.srm.cjava.wk01.day04.Package02.p1;
 
 public class ClassA {
     public void display(){

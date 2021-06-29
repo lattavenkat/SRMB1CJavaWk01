@@ -1,4 +1,4 @@
-package com.srm.cjava.wk01.Day04.UserDefinedExcp;
+package com.srm.cjava.wk01.day04.UserDefinedExcp;
 
 public class PayOutOfBoundExcp extends Exception{
     PayOutOfBoundExcp(String s){

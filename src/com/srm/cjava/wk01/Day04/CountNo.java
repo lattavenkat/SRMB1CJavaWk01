@@ -1,4 +1,4 @@
-package com.srm.cjava.wk01.Day04;
+package com.srm.cjava.wk01.day04;
 
 public class CountNo {
     public static void main(String[] args) {
