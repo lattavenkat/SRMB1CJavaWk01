@@ -1,4 +1,4 @@
-package com.srm.cjava.wk01.day07;
+package com.srm.cjava.wk02.day07;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,16 +7,17 @@ import java.io.IOException;
 
 public class FileCountOperation {
     public static void main(String[] args) throws IOException {
-        File f1=new File("D:\\file1.txt"); 
+         
         String[] wordList=null;   
-        FileReader fr = new FileReader(f1);  
-        BufferedReader br = new BufferedReader(fr); 
         String line;
         int countword=0;
         int flag;
         int vowel=0;
         int cons=0;
         
+        File f1=new File("D:\\file1.txt");
+        FileReader fr = new FileReader(f1);  
+        BufferedReader br = new BufferedReader(fr); 
         while((line=br.readLine())!=null)
         {
              wordList = line.split("\\s+");

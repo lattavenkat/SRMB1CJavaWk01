@@ -1,4 +1,4 @@
-package com.srm.cjava.wk01.day07;
+package com.srm.cjava.wk02.day07;
 
 import java.applet.Applet;
 import java.awt.Color;
