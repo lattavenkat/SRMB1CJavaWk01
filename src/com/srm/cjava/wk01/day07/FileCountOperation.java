@@ -14,7 +14,7 @@ public class FileCountOperation {
         String line;
         int countword=0;
         int flag;
-        int Vowels=0;
+        int vowel=0;
         int cons=0;
         
         while((line=br.readLine())!=null)
@@ -30,7 +30,7 @@ public class FileCountOperation {
                  if(ch == 'a' || ch == 'e' || ch == 'i' ||ch == 'o' || ch == 'u')   
                  {
                         flag=1; 
-                        Vowels=Vowels+1;
+                        vowel=vowel+1;
                         System.out.println("Vowel Found: " +ch);
                   }
                  else{
@@ -43,7 +43,7 @@ public class FileCountOperation {
         }
         System.out.println("Total number of words in the File: " +countword);
         System.out.println("Total Characters in the File: " +(countword-1));
-        System.out.println("Total Count of Vowels in the File:  "+Vowels);
+        System.out.println("Total Count of Vowels in the File:  "+vowel);
         System.out.println("Total Count of Consonants in the File: " +cons);
         br.close();
 }

@@ -40,6 +40,7 @@ public class FileConversion {
                 System.out.println("IRRELAVANT VALUE");
         }
         sc.close();
+        br1.close();
     }
 
 }
