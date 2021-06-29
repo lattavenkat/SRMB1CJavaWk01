@@ -79,14 +79,14 @@ public class MyQueue {
         System.out.println("After dequeue :\n" + queue1);
 
         queueclass<String> queue2 = new queueclass<>();
-        queue2.enqueue("Akash");
         queue2.enqueue("Latha");
-        queue2.enqueue("mellows");
+        queue2.enqueue("Akash");
+        queue2.enqueue("Mellow");
         System.out.println("\nAfter enqueue of 3 string elements:\n" + queue2);
         System.out.println("Front = " + queue2.front() + ", rear = " + queue2.rear());
 
         queueclass<Float> queue3 = new queueclass<>();
         System.out.println("\nCreated new Float type queue ...");
-        System.out.println("Checking if queue is empty or not :\n" + queue3.empty());
+        System.out.println("Checking if queue is empty:\n" + queue3.empty());
     }
 }

@@ -16,8 +16,8 @@ class Restrict<T extends Number> {
   public class GenericRestrictions {
     public static void main(String args[]) {
       Integer n[] = { 5 };
-      Restrict<Integer> iOb = new Restrict<Integer>(100, n);
-        iOb.view();
+      Restrict<Integer> ob = new Restrict<Integer>(100, n);
+        ob.view();
       Restrict<?> gen[] = new Restrict<?>[10];
     }
   }
