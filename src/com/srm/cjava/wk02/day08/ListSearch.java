@@ -20,6 +20,9 @@ public class ListSearch {
         if(list.get(i)==search){
             System.out.println("Element found at index " +i);
         }
+        else{
+            System.out.println("Element not found");
+        }
         }
     }
 
