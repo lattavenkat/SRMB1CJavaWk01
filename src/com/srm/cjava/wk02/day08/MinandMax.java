@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class MinandMax {
     public static void main(String[] args) {
+        System.out.println("FINDING MINIMUM AND MAXIMUM IN AN ARRAYLIST");
         int num = 0;
         int min = 0;
         int max = 0;
@@ -13,8 +14,9 @@ public class MinandMax {
 
         ArrayList<Integer> array = new ArrayList<Integer>();
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number");
         for (i = 0; i < 5; ++i) {
-            System.out.println("Enter a number");
+           
             num = sc.nextInt();
             array.add(num);
         }

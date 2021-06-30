@@ -23,11 +23,12 @@ class concatlist {
         System.out.println("LIST 1: " + l1);
         System.out.println("LIST 2: " + l2);
         LinkedList<Integer> l3 = new LinkedList<Integer>();
+        //AddAll method
         l3.addAll(l1);
         l3.addAll(l2);
         System.out.println("----------------------------------------------------------");
         System.out.println("CONCATENATION OF LIST USING AddAll() METHOD, LIST 3=" + l3);
-        // using iterator
+        // using Iterator
         Iterator i = l1.iterator();
         while (i.hasNext()) {
             l2.add((int) i.next());
@@ -57,6 +58,7 @@ class concatlist {
 
 public class ConcatLinkedList {
     public static void main(String[] args) {
+        System.out.println("CONCATENATION OF TWO LIST");
 
         concatlist ob = new concatlist();
         ob.usingaddall();

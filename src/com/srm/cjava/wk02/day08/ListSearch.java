@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 public class ListSearch {
     public static void main(String[] args) {
+        System.out.println("SEARCHING LIST ELEMENTS");
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(2);
