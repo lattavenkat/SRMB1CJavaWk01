@@ -18,7 +18,7 @@ public class StackOperation {
         System.out.println("Adding 1010 element at the beginning ");
         System.out.println("Enter element to search: ");
         int s = sc.nextInt();
-        System.out.println("Check if element found"+aq.contains(s));
+        System.out.println("Check if element found? "+aq.contains(s));
         System.out.println("Sorting in decending order"+aq.descendingIterator());
         System.out.println("checking whether list is empty? "+aq.isEmpty());
     }
