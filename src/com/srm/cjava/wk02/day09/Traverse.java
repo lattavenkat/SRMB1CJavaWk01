@@ -37,5 +37,6 @@ public class Traverse {
         Integer re=sc.nextInt();        
         mylist.remove(re);
          System.out.println("REMOVE AN ELEMENT "+mylist);
+         sc.close();
     }
 }

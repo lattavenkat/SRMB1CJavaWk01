@@ -11,7 +11,6 @@ class PrintMap {
         map.put(3, "Vinland Saga");
         map.put(4, "Demon Slayer");
         map.put(5, "Dr.Stone");
-        Scanner sc = new Scanner(System.in);
         
         System.out.println("Printing key and values of Map:" + map);
         System.out.println("Fetching map values" + map.values());

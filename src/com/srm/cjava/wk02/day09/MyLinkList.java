@@ -52,13 +52,11 @@ public class MyLinkList {
         list.add(new Employee(2, "Anu", "programmer"));
         list.add(new Employee(3, "Nithi", "Developer"));
         list.add(new Employee(4, "Akash", "Manager"));
-        list.add(new Employee(2, "Aro", "Designer"));
+        list.add(new Employee(5, "Aro", "Designer"));
        
         System.out.println("Linked List Content: " + list );
         
         System.out.println(list.getFirst());
-
-        System.out.println(list);
 
     }
 }
