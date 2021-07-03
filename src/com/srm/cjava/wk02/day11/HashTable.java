@@ -18,9 +18,7 @@ public class HashTable {
         System.out.println("Enter Value to search in hash table");
         String s=sc.next();
         if (m.containsValue(s)) {
-            String a = m.get(s);
-            //System.out.println("value for key is:- " + a);
-            System.out.println("Key "  +s+ " is found!");
+             System.out.println("Key "  +s+ " is found!");
         }
         else{
             System.out.println("Element "+s+ " not found in hastable");
