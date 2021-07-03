@@ -8,9 +8,9 @@ import java.util.TreeMap;
 class Directory{
     private String name;
     private long phone;
-    public Directory( long phone,String name) {
+    public Directory( long phoneno,String name) {
         this.name = name;
-        this.phone = phone;
+        this.phone = phoneno;
     }
     public String getName() {
         return name;
@@ -39,10 +39,10 @@ class PhoneDirectory {
         tm.put(61, new Directory(871115224, "Lisha"));
         System.out.println("TREE MAP-KEY SORTED BY DEFAULT: " + tm);
         Scanner sc = new Scanner(System.in);
-        Set<Map.Entry<Integer, Directory>> entries = tm.entrySet();
+        Set<Map.Entry<Integer, Directory>> x = tm.entrySet();
 
-        for (Map.Entry<Integer, Directory> entry : entries) {
-            System.out.println(entry.getKey() + "=>" + entry.getValue());
+        for (Map.Entry<Integer, Directory> y : x) {
+            System.out.println(y.getKey() + "---" + y.getValue());
         }
 
         System.out.println("Enter the Phone Number: ");
@@ -52,7 +52,7 @@ class PhoneDirectory {
             Directory dir = ent.getValue();
 
             if (num == dir.getPhone()) {
-                System.out.println(ent.getKey() + "=>" + ent.getValue());
+                System.out.println(ent.getKey() + "---" + ent.getValue());
             }
         }
 
@@ -63,7 +63,7 @@ class PhoneDirectory {
             Directory ntm = ent1.getValue();
 
             if (nam.equalsIgnoreCase(ntm.getName())){
-                System.out.println(ent1.getKey() + "=>" + ent1.getValue());
+                System.out.println(ent1.getKey() + "---" + ent1.getValue());
             }
         }
 

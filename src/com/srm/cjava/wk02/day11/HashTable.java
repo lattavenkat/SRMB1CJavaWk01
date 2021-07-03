@@ -11,7 +11,7 @@ public class HashTable {
         m.put(300, "C");
         m.put(400, "D");
         m.put(500, "E");
-        System.out.println("Mappings : " + m);
+        System.out.println("Hastable Values : " + m);
         System.out.println("Hashcode of the Hashtable is" + m.hashCode());
         System.out.println("Size of Hashtable is " + m.size());
         Scanner sc = new Scanner(System.in);
@@ -20,10 +20,13 @@ public class HashTable {
         if (m.containsValue(s)) {
             String a = m.get(s);
             System.out.println("value for key is:- " + a);
-            System.out.println("Key "  +s+ "found!");
+            System.out.println("Key "  +s+ " is found!");
         }
         else{
-            System.out.println("Element "+s+ "not found in hastable");
+            System.out.println("Element "+s+ " not found in hastable");
         }
+        m.remove(500);
+        System.out.println("After Removing hash key 500: "+m);
+        sc.close();
     }
 }

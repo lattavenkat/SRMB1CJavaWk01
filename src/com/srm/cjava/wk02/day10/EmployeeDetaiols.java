@@ -5,11 +5,11 @@ public class EmployeeDetaiols {
     private String name;
     private int age;
     private String desig;
-    public EmployeeDetaiols(int roll, String name, int age, String desig) {
+    public EmployeeDetaiols(int roll, String name, int age, String designation) {
         this.roll = roll;
         this.name = name;
         this.age = age;
-        this.desig = desig;
+        this.desig = designation;
     }
 
     public int getRoll() {
@@ -38,6 +38,6 @@ public class EmployeeDetaiols {
     }
     @Override
     public String toString() {
-        return "Emplo [age=" + age + ", desig=" + desig + ", name=" + name + ", roll=" + roll + "]";
+        return "Emplo [Age=" + age + ", Designation=" + desig + ", Name=" + name + ", Roll No=" + roll + "]";
     }
 }
