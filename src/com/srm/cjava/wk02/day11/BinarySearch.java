@@ -1,6 +1,9 @@
 package com.srm.cjava.wk02.day11;
 
 public class BinarySearch {
+    
+    
+    // search
     int binarySearch(int array[], int x, int low, int high) {
 
         while (low <= high) {
@@ -21,13 +24,14 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         BinarySearch ob = new BinarySearch();
-        int array[] = { 3, 4, 5, 6, 7, 8, 9 };
+        int array[] = { 7, 8, 5, 9, 3, 4, 96};
         int n = array.length;
-       
-        int result = ob.binarySearch(array, 99, 0, n - 1);
+
+        int result = ob.binarySearch(array, 3, 0, n - 1);
         if (result == -1)
             System.out.println("Not found");
         else
             System.out.println("Element found at index " + result);
+
     }
 }

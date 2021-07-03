@@ -19,7 +19,7 @@ public class HashTable {
         String s=sc.next();
         if (m.containsValue(s)) {
             String a = m.get(s);
-            System.out.println("value for key is:- " + a);
+            //System.out.println("value for key is:- " + a);
             System.out.println("Key "  +s+ " is found!");
         }
         else{
