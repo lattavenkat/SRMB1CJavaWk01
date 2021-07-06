@@ -20,7 +20,7 @@ public class FileCountOperation {
         BufferedReader br = new BufferedReader(fr); 
         while((line=br.readLine())!=null)
         {
-             wordList = line.split("\\s+");
+            wordList = line.split("\\s+");
                   
             countword += wordList.length;
            for(int i=0;i<wordList.length;i++)

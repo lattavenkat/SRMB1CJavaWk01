@@ -34,4 +34,4 @@ public class ArrDuplicate {
         }
         sc.close();
     }
-}
+} 
