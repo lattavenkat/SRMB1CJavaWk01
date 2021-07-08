@@ -29,7 +29,7 @@ public class simpleframe {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-               
+
                 tf.setText("Welcome!");
             }
 

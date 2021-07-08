@@ -48,12 +48,13 @@ public class TrafficLight extends JFrame implements ActionListener {
         TrafficLight trafficLight = new TrafficLight();      
         trafficLight.setVisible(true);
     }  
-    public void actionPerformed(ActionEvent e){      
+    public void actionPerformed(ActionEvent e){  
+        String str = "";    
         if (e.getSource() == buttonRed){
             green.turnOn(false);          
             yellow.turnOn(false);
             red.turnOn(true);
-            
+            str = "You Selected Red : Stop";
         } else if (e.getSource() == buttonYellow){
             yellow.turnOn(true);          
             green.turnOn(false);
@@ -88,14 +89,15 @@ class Signal extends JPanel{
     }
 
     public void paintComponent(Graphics graphics){
-        graphics.setColor( Color.black );
+        graphics.setColor( Color.BLUE );
         graphics.fillRect(0,0,getWidth(),getHeight());
 
         if (change){
             graphics.setColor( on );
-        } else {
-            graphics.setColor( on.darker().darker().darker() );
-        }
+         } 
+         //else {
+        //     graphics.setColor( on.darker().darker().darker() );
+        // }
         graphics.fillOval( border,border,2*radius,2*radius );
     }
 }
