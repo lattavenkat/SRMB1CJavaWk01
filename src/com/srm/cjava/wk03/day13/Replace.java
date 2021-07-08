@@ -1,4 +1,4 @@
-package com.srm.cjava.wk02.day13;
+package com.srm.cjava.wk03.day13;
 
 import java.util.Scanner;
 
