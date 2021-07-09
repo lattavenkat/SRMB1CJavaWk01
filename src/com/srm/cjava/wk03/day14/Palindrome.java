@@ -1,21 +1,22 @@
 package com.srm.cjava.wk03.day14;
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Button;
+import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-public class Palindrome implements ActionListener{
+
+public class Palindrome implements ActionListener {
     Button bt;
     TextField tf;
-    Label l1,l2;
+    Label l1, l2;
     Frame f;
 
-    Palindrome(){
+    Palindrome() {
         f = new Frame("Check palindrome");
 
         l1 = new Label("Check Palindrome");
@@ -42,7 +43,7 @@ public class Palindrome implements ActionListener{
                 System.exit(0);
             }
         });
-
+        f.setBackground(Color.GRAY);
         f.setLayout(null);
         f.setSize(600, 500);
         f.setVisible(true);
@@ -51,24 +52,24 @@ public class Palindrome implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+
         String str = tf.getText();
         String rev = "";
         int length = str.length();
- 
-      for ( int i = length - 1; i >= 0; i-- )
-         rev = rev + str.charAt(i);
- 
-      if (str.equals(rev))
-         l2.setText(str + " is a palindrome");
-      else
-      l2.setText(str + "is not a palindrome");
- 
-        
+
+        for (int i = length - 1; i >= 0; i--)
+            rev = rev + str.charAt(i);
+
+        if (str.equals(rev))
+            l2.setText(str + " is a palindrome");
+        else
+            l2.setText(str + "is not a palindrome");
+
     }
+
     public static void main(String args[]) {
         Palindrome p = new Palindrome();
         System.out.println(p);
     }
-    
+
 }

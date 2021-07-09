@@ -1,6 +1,4 @@
 package com.srm.cjava.wk03.day15;
-
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -48,13 +46,11 @@ public class TrafficLight extends JFrame implements ActionListener {
         TrafficLight trafficLight = new TrafficLight();      
         trafficLight.setVisible(true);
     }  
-    public void actionPerformed(ActionEvent e){  
-        String str = "";    
+    public void actionPerformed(ActionEvent e){      
         if (e.getSource() == buttonRed){
             green.turnOn(false);          
             yellow.turnOn(false);
             red.turnOn(true);
-            str = "You Selected Red : Stop";
         } else if (e.getSource() == buttonYellow){
             yellow.turnOn(true);          
             green.turnOn(false);
@@ -89,15 +85,12 @@ class Signal extends JPanel{
     }
 
     public void paintComponent(Graphics graphics){
-        graphics.setColor( Color.BLUE );
+        graphics.setColor( Color.DARK_GRAY );
         graphics.fillRect(0,0,getWidth(),getHeight());
 
         if (change){
             graphics.setColor( on );
-         } 
-         //else {
-        //     graphics.setColor( on.darker().darker().darker() );
-        // }
+        } 
         graphics.fillOval( border,border,2*radius,2*radius );
     }
 }

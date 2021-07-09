@@ -11,13 +11,14 @@ class calculator extends JFrame implements ActionListener {
 
     String s0, s1, s2;
     static boolean b = true;
+
     calculator() {
         s0 = s1 = s2 = "";
     }
 
     public static void main(String args[]) {
 
-        f = new JFrame("calculator");
+        f = new JFrame("My calculator");
 
         try {
 
@@ -106,7 +107,7 @@ class calculator extends JFrame implements ActionListener {
         String s = e.getActionCommand();
 
         if ((s.charAt(0) >= '0' && s.charAt(0) <= '9') || s.charAt(0) == '.') {
-            
+
             if (!s1.equals(""))
                 s2 = s2 + s;
             else
