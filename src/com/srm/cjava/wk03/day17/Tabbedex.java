@@ -28,7 +28,7 @@ public class Tabbedex {
         tabbedPane.add("Three", p3);
         f.add(tabbedPane, BorderLayout.CENTER);
         f.setSize(400, 150);
-        
+
         f.setVisible(true);
     }
 
