@@ -7,25 +7,25 @@ import javax.swing.JTable;
 
 public class JTableDemo {
 
-    JFrame fr;
+    JFrame f;
 
     JTable jt;
     static JComboBox c;
 
     JTableDemo() {
 
-        fr = new JFrame();
-
-        fr.setTitle("JTable Sample");
+        f = new JFrame();
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setTitle("JTable Sample");
         String[][] d = { { "Sam", "29", "Dream Land" }, { "Anna`", " 27 ", "Happy Place" },
                 { "Nohh", " 4 ", "NOrthan way" }, };
-        String[] cn = { "Name", "Age", "House Address" };
+        String[] cn = { "Name", "Age", "Address" };
         jt = new JTable(d, cn);
         jt.setBounds(30, 40, 200, 300);
         JScrollPane jsp = new JScrollPane(jt);
-        fr.add(jsp);
-        fr.setSize(500, 200);
-        fr.setVisible(true);
+        f.add(jsp);
+        f.setSize(500, 200);
+        f.setVisible(true);
     }
 
     public static void main(String[] args) {

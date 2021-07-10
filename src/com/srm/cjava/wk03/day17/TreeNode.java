@@ -1,5 +1,7 @@
 package com.srm.cjava.wk03.day17;
 
+import java.awt.Color;
+
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 
@@ -7,6 +9,7 @@ public class TreeNode {
     JFrame f;
     TreeNode(){
     f=new JFrame();
+    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     DefaultMutableTreeNode country=new DefaultMutableTreeNode("India");
     DefaultMutableTreeNode state=new DefaultMutableTreeNode("States");
     country.add(state);
@@ -22,4 +25,5 @@ public class TreeNode {
     }
     public static void main(String[] args) {
     new TreeNode();
+   
     }}

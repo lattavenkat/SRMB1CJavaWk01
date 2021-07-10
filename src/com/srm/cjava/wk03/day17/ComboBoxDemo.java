@@ -11,6 +11,7 @@ class ComboBoxDemo extends JFrame implements ItemListener {
     public static void main (String [] args)
     {
     f = new JFrame ("frame");
+    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     ComboBoxDemo st = new ComboBoxDemo ();
     f.setLayout (new FlowLayout());
     String str[] = { "Iron Man", "Captain America", "Black Panther", "Black Widow", "Spider Man Home Coming" };
@@ -25,8 +26,10 @@ class ComboBoxDemo extends JFrame implements ItemListener {
     pa.add (c);
     pa.add (b);
     f.add (pa);
-    f.setSize (400, 300);
+    f.setSize (700, 700);
+   
     f.show ();
+    
     }
     public void itemStateChanged (ItemEvent e)
     {

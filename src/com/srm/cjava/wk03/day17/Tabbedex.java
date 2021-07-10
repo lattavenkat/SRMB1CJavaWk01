@@ -1,6 +1,7 @@
 package com.srm.cjava.wk03.day17;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -9,12 +10,12 @@ import javax.swing.JTabbedPane;
 
 public class Tabbedex {
 
-    JFrame frame;
+    JFrame f;
 
     Tabbedex() {
 
-        frame = new JFrame("Tabbed Pane Sample");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f = new JFrame("Tabbed Pane Sample");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
         tabbedPane.setTabPlacement(JTabbedPane.TOP);
@@ -25,9 +26,10 @@ public class Tabbedex {
         tabbedPane.add("One", p1);
         tabbedPane.add("Two", p2);
         tabbedPane.add("Three", p3);
-        frame.add(tabbedPane, BorderLayout.CENTER);
-        frame.setSize(400, 150);
-        frame.setVisible(true);
+        f.add(tabbedPane, BorderLayout.CENTER);
+        f.setSize(400, 150);
+        
+        f.setVisible(true);
     }
 
     public static void main(String args[]) {

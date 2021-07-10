@@ -1,65 +1,158 @@
 package com.srm.cjava.wk03.day16;
 
-import javax.swing.*;
+
+import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class Calculator implements ActionListener {
-	JTextField tf1, tf2, tf3;
-	JButton b1, b2, b3, b4;
+	JFrame frame;
+    JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, ba, bd, be, bf, bg, bh, b0, Clear;
+    JTextArea ta;
+    String Textcontent = "", sum = "";
+    double result = 0;
 
-	Calculator() {
-		JFrame f = new JFrame();
-		tf1 = new JTextField();
-		tf1.setBounds(50, 50, 150, 20);
-		tf2 = new JTextField();
-		tf2.setBounds(50, 100, 150, 20);
-		tf3 = new JTextField();
-		tf3.setBounds(50, 150, 150, 20);
-		tf3.setEditable(false);
-		b1 = new JButton("+");
-		b1.setBounds(50, 200, 50, 50);
-		b2 = new JButton("-");
-		b2.setBounds(120, 200, 50, 50);
-		b3 = new JButton("*");
-		b3.setBounds(190, 200, 50, 50);
-		b4 = new JButton("/");
-		b4.setBounds(280, 200, 50, 50);
-		b1.addActionListener(this);
-		b2.addActionListener(this);
-		b3.addActionListener(this);
-		b4.addActionListener(this);
-		f.add(b4);
-		f.add(tf1);
-		f.add(tf2);
-		f.add(tf3);
-		f.add(b1);
-		f.add(b2);
-		f.add(b3);
-		f.setSize(400, 400);
-		f.setLayout(null);
-		f.setVisible(true);
-	}
+    public static void main(String[] args) {
+        Calculator cl = new Calculator();
+        cl.go();
+    }
 
-	public void actionPerformed(ActionEvent e) {
-		String s1 = tf1.getText();
-		String s2 = tf2.getText();
-		int a = Integer.parseInt(s1);
-		int b = Integer.parseInt(s2);
-		int c = 0;
-		if (e.getSource() == b1) {
-			c = a + b;
-		} else if (e.getSource() == b2) {
-			c = a - b;
-		} else if (e.getSource() == b3) {
-			c = a * b;
-		}else if (e.getSource() == b4) {
-			c = a / b;
-		}
-		String result = String.valueOf(c);
-		tf3.setText(result);
-	}
+    public void go() {
+        frame = new JFrame("G Calculator");
+        ta = new JTextArea(1, 20);
+        ta.setBackground(Color.lightGray);
+        JPanel cp = new JPanel();
+        cp.setLayout(new GridLayout(4, 4, 5, 5));
+        JPanel c = new JPanel();
+        c.setLayout(new GridLayout(1, 2, 5, 5));
+        b0 = new JButton("0");
+        b0.addActionListener(this);
 
-	public static void main(String[] args) {
-		new Calculator();
-	}
+        b1 = new JButton("1");
+        b1.addActionListener(this);
+
+        b2 = new JButton("2");
+        b2.addActionListener(this);
+
+        b3 = new JButton("3");
+        b3.addActionListener(this);
+
+        b4 = new JButton("4");
+        b4.addActionListener(this);
+
+        b5 = new JButton("5");
+        b5.addActionListener(this);
+
+        b6 = new JButton("6");
+        b6.addActionListener(this);
+
+        b7 = new JButton("7");
+        b7.addActionListener(this);
+
+        b8 = new JButton("8");
+        b8.addActionListener(this);
+
+        b9 = new JButton("9");
+        b9.addActionListener(this);
+
+        ba = new JButton(".");
+        ba.addActionListener(this);
+
+        bd = new JButton("+");
+        bd.addActionListener(this);
+
+        be = new JButton("-");
+        be.addActionListener(this);
+
+        bf = new JButton("×");
+        bf.addActionListener(this);
+
+        bg = new JButton("/");
+        bg.addActionListener(this);
+
+        bh = new JButton("=");
+        bh.addActionListener(this);
+
+        Clear = new JButton("Clear");
+        Clear.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Textcontent = "";
+                result = 0;
+                sum = "";
+                ta.setText("");
+            }
+        });
+
+        c.add(ta);
+        c.add(Clear);
+        c.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        cp.add(b7);
+        cp.add(b8);
+        cp.add(b9);
+        cp.add(bd);
+        cp.add(b4);
+        cp.add(b5);
+        cp.add(b6);
+        cp.add(be);
+        cp.add(b1);
+        cp.add(b2);
+        cp.add(b3);
+        cp.add(bf);
+        cp.add(b0);
+        cp.add(ba);
+        cp.add(bh);
+        cp.add(bg);
+        cp.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+
+        Container f = frame.getContentPane();
+        f.add(c, BorderLayout.NORTH);
+        f.add(cp, BorderLayout.SOUTH);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String content = e.getActionCommand();
+        ta.append(e.getActionCommand());
+        getTextContent(content);
+    }
+
+    public void getTextContent(String content) {
+        if (content.equals("+") || content.equals("-") || content.equals("×") || content.equals("/")) {
+            Textcontent = Textcontent + " " + content + " ";
+        } else if (content.equals("=")) {
+            Textcontent = Textcontent + " " + content;
+            sum = GetResult(Textcontent);
+        } else {
+            Textcontent = Textcontent + content;
+        }
+        ta.append(sum);
+    }
+
+    public String GetResult(String Textcontent) {
+        String n = Textcontent;
+        String[] content = n.split(" ");
+        result = Double.valueOf(content[0]);
+        for (int i = 1; i < content.length; i++) {
+            switch (content[i]) {
+                case "+":
+                    result = result + Double.valueOf(content[i + 1]);
+                    break;
+                case "-":
+                    result = result - Double.valueOf(content[i + 1]);
+                    break;
+                case "×":
+                    result = result * Double.valueOf(content[i + 1]);
+                    break;
+                case "/":
+                    result = result / Double.valueOf(content[i + 1]);
+                    break;
+                case "=":
+                    break;
+            }
+        }
+        return result + "";
+    }
+
 }
