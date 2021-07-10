@@ -47,19 +47,20 @@ public class Adapter {
 
       Button okButton = new Button("OK");
 
-      final Frame aboutFrame = new Frame();
-      aboutFrame.setSize(300,200);;
-      aboutFrame.setTitle("WindowAdapter Demo");
-      aboutFrame.addWindowListener(new WindowAdapter() {
+      final Frame f = new Frame();
+      f.setSize(300,200);;
+      f.setTitle("WindowAdapter Demo");
+      f.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent windowEvent){
-               aboutFrame.dispose();
-               aboutFrame.setBackground(Color.lightGray);
+               f.dispose();
+               
          }        
       });    
       Label msgLabel = new Label("Window Adapter");
       msgLabel.setAlignment(Label.CENTER);
       msgLabel.setSize(100,100);
-      aboutFrame.add(msgLabel);
-      aboutFrame.setVisible(true);
+      f.add(msgLabel);
+      f.setVisible(true);
+      f.setBackground(Color.lightGray);
    }
 }

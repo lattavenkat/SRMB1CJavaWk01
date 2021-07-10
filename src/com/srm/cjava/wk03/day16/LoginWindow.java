@@ -24,7 +24,7 @@ public class LoginWindow {
 
         panel.setLayout(null);
 
-        JLabel userLabel = new JLabel("User");
+        JLabel userLabel = new JLabel("User Name");
         userLabel.setBounds(10, 10, 80, 25);
         panel.add(userLabel);
 

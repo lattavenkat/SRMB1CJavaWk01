@@ -43,11 +43,11 @@ public class Palindrome implements ActionListener {
                 System.exit(0);
             }
         });
-        f.setBackground(Color.GRAY);
+     
         f.setLayout(null);
         f.setSize(600, 500);
         f.setVisible(true);
-
+        f.setBackground(Color.GRAY);
     }
 
     @Override
