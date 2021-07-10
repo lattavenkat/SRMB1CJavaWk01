@@ -1,90 +1,91 @@
 package com.srm.cjava.wk03.day16;
-import java.awt.Container;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import javax.swing.JTextField;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+public class Temperature extends JFrame {
 
-public class Temperature  extends JFrame
-{
-    private JLabel celsiusLabel;        
-    private JLabel fahrenheitLabel;
-     
-    private JTextField celsiusTF;       
-    private JTextField fahrenheitTF;    
-     
-    private CelsHandler celsiusHandler;
-    private FahrHandler fahrenheitHandler;
-     
-    private static final int WIDTH = 500;
-    private static final int HEIGHT = 300;   
-    private static final double FTOC = 5.0/9.0;
-    private static final double CTOF = 9.0/5.0;
-    private static final int OFFSET = 32;
-     
-    public Temperature()
-    {
-        setTitle("Temperature Conversion");
-        Container c = getContentPane();
-        c.setLayout(new GridLayout(1,4));
-         
-        celsiusLabel = new JLabel("Temp in Celsius: ",
-                                            SwingConstants.RIGHT);
-        fahrenheitLabel = new JLabel("Temp in Fahrenheit: ",
-                                            SwingConstants.RIGHT);
-                                             
-        celsiusTF = new JTextField(7);
-        fahrenheitTF = new JTextField(7);
-         
-        c.add(celsiusLabel);
-        c.add(celsiusTF);
-        c.add(fahrenheitLabel);
-        c.add(fahrenheitTF);
-         
-        celsiusHandler = new CelsHandler();
-        fahrenheitHandler = new FahrHandler();
-         
-        celsiusTF.addActionListener(celsiusHandler);
-        fahrenheitTF.addActionListener(fahrenheitHandler);
-         
-        setSize (WIDTH, HEIGHT);
-        setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    JLabel labelFahr;
+    JLabel labelCels;
+    JTextField textFahr;
+    JTextField textCels;
+    JButton conFahToCel;
+    JButton conCelToFah;
+
+    public Temperature() {
+
+        super("Temperature");
+        setLayout(new FlowLayout());
+
+        labelFahr = new JLabel("Fahrenheit: ", SwingConstants.LEFT);
+        labelFahr.setToolTipText("This is a temerature scale");
+        add(labelFahr);
+        textFahr = new JTextField(10);
+        add(textFahr);
+
+        labelCels = new JLabel("Celsius:       ", SwingConstants.LEFT);
+        labelCels.setToolTipText("This is a scale and unit of measurement for temperature");
+        add(labelCels);
+        textCels = new JTextField(10);
+        add(textCels);
+
+        conFahToCel = new JButton("Convert Fahrenheit to Celsius");
+        add(conFahToCel);
+        conCelToFah = new JButton("Convert Celsius to Fahrenheit");
+        add(conCelToFah);
+
+        JPanel panel = new JPanel(new GridLayout(2, 2, 12, 6));
+        panel.add(labelFahr);
+        panel.add(labelCels);
+        panel.add(textFahr);
+        panel.add(textCels);
+        add(panel, BorderLayout.NORTH);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.add(conFahToCel);
+        buttonPanel.add(conCelToFah);
+        add(buttonPanel, BorderLayout.SOUTH);
+
+        conFahToCel.addActionListener(new FahrListener());
+        conCelToFah.addActionListener(new CelsListener());
+
     }
-     
-    private class CelsHandler implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            double celsius, fahrenheit;
-             
-            celsius =
-                    Double.parseDouble(celsiusTF.getText());
-            fahrenheit = celsius * CTOF + OFFSET;
-            fahrenheitTF.setText(String.format("%.2f", fahrenheit));
+
+    private class FahrListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            if (event.getSource() == conFahToCel) {
+                int conFahToCel = (int) ((5.0 / 9.0 * (((Double.parseDouble(textFahr.getText())) - 32))));
+                textCels.setText(conFahToCel + " °C");
+                textFahr.requestFocus();
+                textFahr.selectAll();
+            }
+
         }
     }
-     
-    private class FahrHandler implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            double celsius, fahrenheit;
-            fahrenheit = 
-                    Double.parseDouble(fahrenheitTF.getText());
-            celsius = (fahrenheit - OFFSET) * FTOC;
-            celsiusTF.setText(String.format("%.2f", celsius));
+
+    private class CelsListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            if (event.getSource() == conCelToFah) {
+                int conCelToFah = (int) ((9.0 / 5.0 * (((Double.parseDouble(textCels.getText())))))) + 32;
+                textFahr.setText(conCelToFah + " °F");
+                textCels.requestFocus();
+                textCels.selectAll();
+            }
+
         }
     }
-             
-     
-    public static void main(String[] args)
-    {
-    	Temperature tempConv = new Temperature();
-        tempConv.setLocationRelativeTo(null);
+
+    public static void main(String[] args) {
+
+        Temperature app = new Temperature();
+        app.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        app.setSize(500, 150);
+        app.setVisible(true);
     }
 }
