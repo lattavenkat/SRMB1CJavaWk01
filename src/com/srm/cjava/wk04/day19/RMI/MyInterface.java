@@ -1,7 +1,5 @@
 import java.rmi.*;
-public interface MyInterface extends Remote
-{
-    public void setData (int d) throws RemoteException;
-    public int getData () throws RemoteException;
-    public void randomData () throws RemoteException;
+
+public interface MyInterface extends Remote {
+    public String div(int a, int b) throws RemoteException;
 }
