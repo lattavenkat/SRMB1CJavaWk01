@@ -8,6 +8,7 @@ public class FindGroupSplit {
         String str1, str2, str3;
         Pattern pattern1, pattern2;
         Matcher matcher1, matcher2;
+        
         // find
 
         System.out.println("FIND");
@@ -33,6 +34,7 @@ public class FindGroupSplit {
         while (matcher2.find()) {
             System.out.println(matcher2.group());
         }
+      
         // split
 
         System.out.println("SPLIT");
