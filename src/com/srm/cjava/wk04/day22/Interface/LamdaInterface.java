@@ -1,4 +1,4 @@
-package com.srm.cjava.wk04.day23;
+package com.srm.cjava.wk04.day22.Interface;
 
 
 interface LamdaInterface {
