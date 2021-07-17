@@ -15,7 +15,7 @@ public class ReferenceMethod {
    ReferenceMethod(String name)
    {
       this.name = name;
-      System.out.printf("MRDemo(String name) called with %s%n", name);
+      System.out.printf("Reference Method(String name) called ", name);
    }
    
     public static void methoddemo() {
